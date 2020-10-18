@@ -1,5 +1,7 @@
-const functions = require('firebase-functions')
+import functions from 'firebase-functions'
 
-exports.helloWorld = functions.https.onRequest((request, response) => {
-  response.send('Hello from Firebase!')
-})
+export default function() {
+  functions.https.onRequest((request, response) => {
+    response.send('Hello from Firebase!')
+  })
+}
