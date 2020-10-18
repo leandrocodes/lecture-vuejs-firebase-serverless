@@ -27,6 +27,7 @@ const Products = {
   async index(req, res) {
     try {
       const { docs } = await db.collection('products').get()
+
       const products = docs.map(doc => {
         return {
           id: doc.id,
@@ -44,7 +45,11 @@ const Products = {
     const productID = req.params.id
 
     try {
-      const product = await db.collection('products').doc(productID).get()
+      const product = await db
+        .collection('products')
+        .doc(productID)
+        .get()
+
       if (product.exists) {
         res.status(200).json({
           id: product.id,
@@ -63,9 +68,15 @@ const Products = {
     const data = req.body
 
     try {
-      const product = await db.collection('products').doc(productID).get()
+      const product = await db
+        .collection('products')
+        .doc(productID)
+        .get()
+
       if (product.exists) {
-        db.collection('products').doc(productID).update(data)
+        db.collection('products')
+          .doc(productID)
+          .update(data)
 
         res.status(204).send()
       } else {
@@ -80,10 +91,15 @@ const Products = {
     const productID = req.params.id
 
     try {
-      const product = await db.collection('products').doc(productID).get()
+      const product = await db
+        .collection('products')
+        .doc(productID)
+        .get()
 
       if (product.exists) {
-        db.collection('products').doc(productID).delete()
+        db.collection('products')
+          .doc(productID)
+          .delete()
 
         res.status(204).send()
       } else {
