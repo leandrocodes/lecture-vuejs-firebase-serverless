@@ -38,6 +38,24 @@ const Products = {
     } catch (err) {
       res.status(500).json(err)
     }
+  },
+
+  async show(req, res) {
+    const productID = req.params.id
+
+    try {
+      const product = await db.collection('products').doc(productID).get()
+      if (product.exists) {
+        res.status(200).json({
+          id: product.id,
+          data: product.data()
+        })
+      } else {
+        throw new Error('Product does not exist.')
+      }
+    } catch (err) {
+      res.status(500).json(err)
+    }
   }
 }
 

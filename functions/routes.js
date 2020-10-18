@@ -9,5 +9,7 @@ router.get('/hi', (req, res) => {
 
 router.post('/products', ProductController.create)
 router.get('/products', ProductController.index)
+router.get('/products/:id', ProductController.show)
+router.patch('/products/:id', ProductController.change)
 
 module.exports = router
