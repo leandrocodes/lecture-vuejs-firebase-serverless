@@ -56,6 +56,22 @@ const Products = {
     } catch (err) {
       res.status(500).json(err)
     }
+  },
+
+  async change(req, res) {
+    const productID = req.params.id
+    const data = req.body
+
+    try {
+      const product = await db.collection('products').doc(productID).get()
+      if (product.exists) {
+        db.collection('products').doc(productID).update(data)
+
+        res.status(204).send()
+      } else {
+        throw new Error('Product does not exist.')
+      }
+    } catch (err) {}
   }
 }
 
