@@ -71,7 +71,27 @@ const Products = {
       } else {
         throw new Error('Product does not exist.')
       }
-    } catch (err) {}
+    } catch (err) {
+      res.status(500).json(err)
+    }
+  },
+
+  async remove(req, res) {
+    const productID = req.params.id
+
+    try {
+      const product = await db.collection('products').doc(productID).get()
+
+      if (product.exists) {
+        db.collection('products').doc(productID).delete()
+
+        res.status(204).send()
+      } else {
+        throw new Error('Product does not exist.')
+      }
+    } catch (err) {
+      res.status(500).json(err)
+    }
   }
 }
 

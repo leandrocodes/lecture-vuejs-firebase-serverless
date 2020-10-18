@@ -11,5 +11,6 @@ router.post('/products', ProductController.create)
 router.get('/products', ProductController.index)
 router.get('/products/:id', ProductController.show)
 router.patch('/products/:id', ProductController.change)
+router.delete('/products/:id', ProductController.remove)
 
 module.exports = router
