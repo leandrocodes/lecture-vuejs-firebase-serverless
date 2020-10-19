@@ -116,7 +116,12 @@ export default {
     closeModal() {
       this.openModal = false
       this.isNotShowProduct = true
-      this.product = null
+      this.product = {
+        name: '',
+        brand: '',
+        quantity: '',
+        price: ''
+      }
     }
   }
 }
