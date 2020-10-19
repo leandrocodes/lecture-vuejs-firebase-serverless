@@ -1,4 +1,5 @@
 dependencies:
+  axios: 0.20.0
   core-js: 3.6.5
   register-service-worker: 1.7.1
   vue: 3.0.1
@@ -20,6 +21,7 @@ devDependencies:
   node-sass: 4.14.1
   prettier: 1.19.1
   sass-loader: 8.0.2_node-sass@4.14.1
+  vue-cli-plugin-axios: 0.0.4
 lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.10.4:
@@ -2108,6 +2110,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-zg7Hz2k5lI8kb7U32998pRRFin7zJlkfezGJjUc2heaD4Pw2wObakCDVzkKztTm/Ln7eiVvYsjqak0Ed4LkMDA==
+  /axios/0.20.0:
+    dependencies:
+      follow-redirects: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-ANA4rr2BDcmmAQLOKft2fufrtuvlqR+cXNNinUmvfeSNCOF98PZL+7M/v1zIdGo7OLjEA9J2gXJL+j4zGsl0bA==
   /babel-eslint/10.1.0_eslint@6.8.0:
     dependencies:
       '@babel/code-frame': 7.10.4
@@ -4421,7 +4429,6 @@ packages:
     resolution:
       integrity: sha512-3Z4XhFZ3992uIq0XOqb9AreonueSYphE6oYbpt5+3u06JWklbsPkNv3ZKkP9Bz/r+1MWCaMoSQ28P85+1Yc77w==
   /follow-redirects/1.13.0:
-    dev: true
     engines:
       node: '>=4.0'
     resolution:
@@ -9318,6 +9325,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
+  /vue-cli-plugin-axios/0.0.4:
+    dev: true
+    resolution:
+      integrity: sha512-p2b/fvPJuPBnvU8027PAAuU5DiOzUn2lku8XLG/f6c8FU0N+/MXWZAlOuHhqd9e7+KIZitwe/c8qlmv7TglbTg==
   /vue-eslint-parser/7.1.1_eslint@6.8.0:
     dependencies:
       debug: 4.2.0
@@ -9909,6 +9920,7 @@ specifiers:
   '@vue/cli-service': ~4.5.0
   '@vue/compiler-sfc': ^3.0.0
   '@vue/eslint-config-prettier': ^6.0.0
+  axios: ^0.20.0
   babel-eslint: ^10.1.0
   core-js: ^3.6.5
   eslint: ^6.7.2
@@ -9919,5 +9931,6 @@ specifiers:
   register-service-worker: ^1.7.1
   sass-loader: ^8.0.2
   vue: ^3.0.0
+  vue-cli-plugin-axios: ~0.0.4
   vue-router: ^4.0.0-0
   vuex: ^4.0.0-0
